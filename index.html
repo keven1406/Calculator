@@ -12,13 +12,14 @@
 				<h1>Calculator</h1>
 			</header>
 			<section id = "screen">
+				<p id="value">0</p>
 			</section>
 			<section id = "keyboard">
 				<div class = "order-button">
-					<input type = "button" id = "seven" value = "7"/>
-					<input type = "button" id = "eight" value = "8"/>
-					<input type = "button" id = "nine" value = "9"/>
-					<input type = "button" id = "times" value = "X"/>
+					<input type = "button" id = "seven" value = "7" onclick = "calculateNumber(7)"/>
+					<input type = "button" id = "eight" value = "8" onclick = "calculateNumber(8)"/>
+					<input type = "button" id = "nine" value = "9" onclick = "calculateNumber(9)"/>
+					<input type = "button" id = "times" value = "X" onclick = "timesSign()"/>
 				</div>
 				<div class = "order-button">
 					<input type = "button" id = "four" value = "4"/>
@@ -35,9 +36,10 @@
 				<div class = "order-button">
 					<input type = "button" id = "ten" value = "0"/>
 					<input type = "button" id = "point" value = "."/>
-					<input type = "button" id = "equal" value = "="/>
+					<input type = "button" id = "equal" value = "=" onclick = "result()"/>
 				</div>
 			</section>
 		</div>
+		<script src = "_javascript/script.js"></script>
 	</body>
 </html>
