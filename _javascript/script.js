@@ -1,24 +1,36 @@
-var numberUsed = ["",""], sign = "", numberAmount = 0;
-/*function calculateNumber(number) {
-	numberUsed.push(number);
-	if (numberUsed.length > 2)
-		numberUsed.pop();
-}
-*/
+var numberOne = "", numberTwo = "", sign = "", numberAmount = 0;
+var screen = document.getElementById("value");
 //Using a function showOnScreen to pass the value of the numberUsed to display on the screen.
-function  showOnScreen(algorism, number) {
+function result() {
+	numberOne = Number(numberOne);
+	numberTwo = Number(numberTwo);
+	if (sign == "+")
+		screen.innerHTML = numberOne + numberTwo;
+	if (sign == "-")
+		screen.innerHTML = numberOne - numberTwo;
+	if (sign == "*") 
+		screen.innerHTML = numberOne * numberTwo;
+	numberOne = "";
+	numberTwo = "";
+	sign = "";
+}
+function addSign(operator) {
+	sign = operator;
+}
+//Displaying the digit on the screen.
+function showOnScreen(algorism, number) {
 	if (algorism == "")
 		algorism = String(number);
 	else
 		algorism += String(number);
-	document.getElementById("value").innerHTML = algorism;
+	screen.innerHTML = algorism;
 	return algorism;
 }
+//Using the "if/else" condition to differentiate the variables.
 function addingNumber(number) {
 	if (sign == "")
-		numberUsed[numberAmount] = showOnScreen(numberUsed[numberAmount], number);
-	else 
-		numberUsed[numberAmount/*2*/] = showOnScreen(numberUsed[numberAmount], number);
+		numberOne = showOnScreen(numberOne, number);
+	else {
+		numberTwo = showOnScreen(numberTwo, number);
+	}
 }
-//Using a sign to pass the value of the number for a function and calculate.
-//how to improve this code?
